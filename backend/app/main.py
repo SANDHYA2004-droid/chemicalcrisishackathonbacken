@@ -6,6 +6,8 @@ from . import models
 from .routers import incidents
 from .routers import resources
 from .routers import replanning
+from .routers import data
+from .routers import decision
 
 
 Base.metadata.create_all(bind=engine)
@@ -21,6 +23,8 @@ app = FastAPI(
 app.include_router(incidents.router)
 app.include_router(resources.router)
 app.include_router(replanning.router)
+app.include_router(data.router)
+app.include_router(decision.router)
 
 
 @app.get("/")
